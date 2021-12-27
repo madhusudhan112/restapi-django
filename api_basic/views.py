@@ -29,7 +29,7 @@ def todoCreate(request):
 
 @api_view(['PUT'])
 def todoUpdate(request, id):
-    todo = Todo.obejcts.get(id=id)
+    todo = Todo.objects.get(id=id)
     serializer = TodoSerializer(instance=todo, data=request.data)
     if(serializer.is_valid()):
         serializer.save()
